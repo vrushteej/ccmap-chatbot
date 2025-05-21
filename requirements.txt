@@ -3,3 +3,4 @@ gunicorn
 nltk
 torch
 numpy
+os
