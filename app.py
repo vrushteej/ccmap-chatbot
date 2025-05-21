@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request
 from chat import get_response  # Import your chatbot function
+import os  # ✅ Needed for environment variables
 
 app = Flask(__name__)
 
@@ -23,5 +24,5 @@ def chat():
     return jsonify({"response": bot_response})
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5001))
+    port = int(os.environ.get("PORT", 5001))  # ✅ Use Render’s dynamic port
     app.run(host="0.0.0.0", port=port)
